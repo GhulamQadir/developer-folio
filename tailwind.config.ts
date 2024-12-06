@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        edu: ["Edu AU VIC WA NT Pre", "cursive"],
+        roboto: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [],
