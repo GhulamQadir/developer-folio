@@ -1,11 +1,33 @@
 import Image from "next/image";
 import ProfilePic from "@/assets/profile-pic.jpeg";
 
-function AboutMe() {
+interface TProps {
+  bgColor: string;
+  textColor: string;
+  headingColor: string;
+  iconColor: string;
+  borderColor: string;
+  headingTwoColor: string;
+  containerColor: string;
+}
+function AboutMe({
+  bgColor,
+  textColor,
+  headingColor,
+  borderColor,
+  headingTwoColor,
+  containerColor,
+  iconColor,
+}: TProps) {
   return (
-    <div className="bg-[#151C25] px-5 py-10 md:p-20 flex flex-wrap-reverse justify-center gap-x-28">
+    <div
+      id="aboutDiv"
+      className={`${bgColor} px-5 py-10 md:p-20 flex flex-wrap-reverse justify-center gap-x-28 scroll-smooth`}
+    >
       <div className="relative">
-        <div className="absolute top-0 left-0 w-[50%] h-[90%] border-t-[10px] border-l-[10px] border-[#55E5A4]"></div>
+        <div
+          className={`absolute top-0 left-0 w-[50%] h-[90%] border-t-[10px] border-l-[10px] ${borderColor}`}
+        ></div>
         <Image
           src={ProfilePic}
           alt="profile-pic"
@@ -14,14 +36,16 @@ function AboutMe() {
       </div>
       <div className="lg:w-[50%] mb-5">
         <div>
-          <p className="text-5xl text-white font-medium">About Me</p>
+          <p className={`text-5xl ${headingTwoColor} font-medium`}>About Me</p>
           <div className="flex ml-14">
-            <div className="w-[50px]  bg-[#55E5A4] h-[5px] content-center mt-[10px] mr-3"></div>
-            <p className=" text-[#55E5A4] text-lg">Who Am I?</p>
+            <div
+              className={`w-[45px]  ${containerColor} h-[5px] content-center mt-[10px] mr-3`}
+            ></div>
+            <p className={`${headingColor} text-lg`}>Who Am I?</p>
           </div>
         </div>
-        <div className="mt-4">
-          <p className="text-[#A9A9A9] leading-[33px] lg:text-xl text-lg">
+        <div className="mt-4 mb-3">
+          <p className={`${textColor} leading-[30px] lg:text-xl text-lg`}>
             I am currently doing my Bachelors from XYZ University, Karachi,
             Pakistan.I have a keen interest in Full Stack development. My goal
             is to use my expertise in building exciting and functional user

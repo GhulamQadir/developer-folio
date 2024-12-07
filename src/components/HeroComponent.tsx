@@ -1,22 +1,44 @@
 import Image from "next/image";
 import DevGuy from "@/assets/devguy.gif";
 
-function HeroComponent({ developerName }: { developerName: string }) {
+interface TProps {
+  developerName: string;
+  bgColor: string;
+  textColor: string;
+  headingColor: string;
+  iconColor: string;
+  borderColor: string;
+  headingTwoColor: string;
+}
+function HeroComponent({
+  developerName,
+  bgColor,
+  textColor,
+  headingColor,
+  headingTwoColor,
+  borderColor,
+  iconColor,
+}: TProps) {
   return (
-    <div className="bg-[#151C25] w-full px-5 pt-20 md:pt-32 pb-10 flex flex-wrap justify-center border-b-[1px] border-[#55E5A4]">
+    <div
+      className={`${bgColor} w-full px-5 pt-20 md:pt-32 pb-10 flex flex-wrap justify-center border-b-[1px] ${borderColor}`}
+    >
       <div className="lg:w-[40%] md:mt-12">
-        <p className="text-3xl md:text-5xl text-white">Nice to meet you,</p>
-        <p className="text-4xl md:text-6xl mt-3 text-white">
-          I'm <span className="text-[#55E5A4] font-bold">{developerName}</span>.
+        <p className={`text-3xl md:text-5xl ${headingTwoColor}`}>
+          Nice to meet you,
         </p>
-        <p className="text-2xl text-[#A9A9A9] mt-6">
+        <p className={`text-4xl md:text-6xl mt-3 ${headingTwoColor}`}>
+          I'm{" "}
+          <span className={`${headingColor} font-bold`}>{developerName}</span>.
+        </p>
+        <p className={`text-2xl ${textColor} mt-6`}>
           A passionate MERN Stack Developer creating web applications using the
           latest frontend technologies and frameworks to bring your vision to
           life.
         </p>
       </div>
       <div className="lg:w-[40%]">
-        <Image src={DevGuy} alt="dev-guy" className="" />
+        <Image src={DevGuy} alt="dev-guy" />
       </div>
     </div>
   );

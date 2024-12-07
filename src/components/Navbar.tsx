@@ -1,11 +1,28 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Drawer } from "antd";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
 
-function Navbar({ developerName }:{developerName:string}) {
+interface TProps {
+  developerName: string;
+  theme: boolean;
+  bgColor: string;
+  textColor: string;
+  headingColor: string;
+  iconColor: string;
+  setTheme: (theme: boolean) => void;
+}
+function Navbar({
+  developerName,
+  theme,
+  setTheme,
+  bgColor,
+  textColor,
+  headingColor,
+  iconColor,
+}: TProps) {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -16,46 +33,45 @@ function Navbar({ developerName }:{developerName:string}) {
     setOpen(false);
   };
 
+  const changeTheme = () => {
+    setTheme(!theme);
+  };
+
   return (
-    <div className="bg-[#151C25] flex justify-between px-1 md:px-2 py-4">
+    <div
+      className={`${bgColor} flex justify-between px-1 md:px-2 py-4 sticky top-0 !scroll-smooth`}
+    >
       <div className="lg:w-[20%] text-center content-center">
-        <p className="text-2xl md:text-[28px] text-[#55E5A4] font-edu font-medium">
+        <p
+          className={`text-2xl md:text-[28px] ${headingColor} font-edu font-medium}`}
+        >
           {developerName}
         </p>
       </div>
       <div className="lg:w-[60%] flex lg:justify-between justify-end items-center lg:px-5 px-2">
-        <div className="hidden lg:block">
+        <div className={`hidden lg:block ${headingColor}`}>
           <Link
-            href={""}
-            className="text-[#55E5A4] w-20 rounded-md py-[5px] mr-7 text-xl"
+            href={"#aboutDiv"}
+            className="w-20 rounded-md py-[5px] mr-7 text-xl"
           >
             About
           </Link>
-          <Link
-            href={""}
-            className="text-[#55E5A4] w-20 rounded-md py-[5px] mr-7 text-xl"
-          >
+          <Link href={""} className="w-20 rounded-md py-[5px] mr-7 text-xl">
             Projects
           </Link>
-          <Link
-            href={""}
-            className="text-[#55E5A4] w-20 rounded-md py-[5px] mr-7 text-xl"
-          >
+          <Link href={""} className=" w-20 rounded-md py-[5px] mr-7 text-xl">
             Resume
           </Link>
-          <Link
-            href={""}
-            className="text-[#55E5A4] w-20 rounded-md py-[5px] mr-7 text-xl"
-          >
+          <Link href={""} className="w-20 rounded-md py-[5px] mr-7 text-xl">
             Contact
           </Link>
         </div>
         <div className="lg:mr-12 flex gap-x-7">
-          <button className="">
-            <MdOutlineDarkMode color="white" size={30} />
+          <button className="" onClick={changeTheme}>
+            <MdOutlineDarkMode color={iconColor} size={30} />
           </button>
           <button className="lg:hidden">
-            <GiHamburgerMenu color="white" size={24} />
+            <GiHamburgerMenu color={iconColor} size={24} />
           </button>
         </div>
       </div>
