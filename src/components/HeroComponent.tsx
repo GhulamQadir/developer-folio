@@ -1,14 +1,16 @@
 import Image from "next/image";
 import DevGuy from "@/assets/devguy.gif";
+import Link from "next/link";
 
 interface TProps {
   developerName: string;
   bgColor: string;
   textColor: string;
   headingColor: string;
-  iconColor: string;
   borderColor: string;
   headingTwoColor: string;
+  containerColor: string;
+  btnTextColor: string;
 }
 function HeroComponent({
   developerName,
@@ -17,7 +19,8 @@ function HeroComponent({
   headingColor,
   headingTwoColor,
   borderColor,
-  iconColor,
+  containerColor,
+  btnTextColor,
 }: TProps) {
   return (
     <div
@@ -36,6 +39,17 @@ function HeroComponent({
           latest frontend technologies and frameworks to bring your vision to
           life.
         </p>
+        <div className="flex md:mt-5 mt-3 items-center gap-x-10">
+          <button className={`${containerColor} px-3 py-1 rounded-md text-lg`}>
+            <Link href={"#contact"} className={`${btnTextColor}`}>
+              Get in Touch
+            </Link>
+          </button>
+          <button className={`${textColor} flex items-center gap-x-2`}>
+            <div className="w-3 h-3 bg-[#55E5A4] rounded-full pr-2"></div>
+            <Link href={"#contact"}>Available now</Link>
+          </button>{" "}
+        </div>
       </div>
       <div className="lg:w-[40%]">
         <Image src={DevGuy} alt="dev-guy" />

@@ -13,6 +13,7 @@ export default function Home() {
   const [iconColor, setIconColor] = useState("white");
   const [borderColor, setBorderColor] = useState("border-[#55E5A4]");
   const [containerColor, setContColor] = useState("bg-[#55E5A4]");
+  const [btnTextColor, setBtnTextColor] = useState("text-[#26313F]");
 
   useEffect(() => {
     if (theme) {
@@ -23,6 +24,7 @@ export default function Home() {
       setHeadingTwoColor("text-[#FFFFFF]");
       setBorderColor("border-[#55E5A4]");
       setContColor("bg-[#55E5A4]");
+      setBtnTextColor("text-[#26313F]");
     } else {
       setBgColor("bg-[#f2f0f2]");
       setTextColor("text-[#26313F]");
@@ -31,6 +33,7 @@ export default function Home() {
       setHeadingTwoColor("text-[#26313F]");
       setBorderColor("border-[#26313F]");
       setContColor("bg-[#26313F]");
+      setBtnTextColor("text-white");
     }
     console.log(theme);
   }, [theme]);
@@ -54,8 +57,9 @@ export default function Home() {
             textColor={textColor}
             headingColor={headingColor}
             headingTwoColor={headingTwoColor}
-            iconColor={iconColor}
             borderColor={borderColor}
+            containerColor={containerColor}
+            btnTextColor={btnTextColor}
           />
           <AboutMe
             bgColor={bgColor}

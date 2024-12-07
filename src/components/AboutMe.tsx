@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ProfilePic from "@/assets/profile-pic.jpeg";
-
+import { techStacks } from "@/data/data";
 interface TProps {
   bgColor: string;
   textColor: string;
@@ -51,8 +51,27 @@ function AboutMe({
             is to use my expertise in building exciting and functional user
             interfaces. Alongside this, I am creating side projects for
             enhancing my skills in the field of development, learning latest
-            technologies and applying in making side projects.
+            technologies and applying in making side projects. The following are
+            tech stacks that I use regularly:
           </p>
+          {/* <Image
+            src={"/tech-stacks/tailwind.png"}
+            width={200}
+            height={100}
+            alt="htmlImage"
+          /> */}
+          {techStacks.map((stack, index) => {
+            return (
+              <div key={stack.title}>
+                <Image
+                  src={stack.image}
+                  width={200}
+                  height={100}
+                  alt={stack.title}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
