@@ -1,32 +1,31 @@
 import Image from "next/image";
 import ProfilePic from "@/assets/profile-pic.jpeg";
 import { techStacks } from "@/data/data";
+import TechStacks from "./TechStacks";
+import { nanoid } from "nanoid";
+
 interface TProps {
-  bgColor: string;
   textColor: string;
   headingColor: string;
-  iconColor: string;
   borderColor: string;
   headingTwoColor: string;
   containerColor: string;
 }
 function AboutMe({
-  bgColor,
   textColor,
   headingColor,
   borderColor,
   headingTwoColor,
   containerColor,
-  iconColor,
 }: TProps) {
   return (
     <div
       id="aboutDiv"
-      className={`${bgColor} px-5 py-10 md:p-20 flex flex-wrap-reverse justify-center gap-x-28 scroll-smooth`}
+      className={`px-5 py-10 md:py-14 md:px-20 flex flex-wrap-reverse justify-center gap-x-28 scroll-smooth border-b-[1px] ${borderColor}`}
     >
       <div className="relative">
         <div
-          className={`absolute top-0 left-0 w-[50%] h-[90%] border-t-[10px] border-l-[10px] ${borderColor}`}
+          className={`absolute top-0 left-0 w-[50%] h-[80%] border-t-[10px] border-l-[10px] ${borderColor}`}
         ></div>
         <Image
           src={ProfilePic}
@@ -34,7 +33,7 @@ function AboutMe({
           className="h-[300px] w-[300px] md:h-[350px] md:w-[350px] mt-[10px] ml-[10px]"
         />
       </div>
-      <div className="lg:w-[50%] mb-5">
+      <div className="lg:w-[50%] mb-7">
         <div>
           <p className={`text-5xl ${headingTwoColor} font-medium`}>About Me</p>
           <div className="flex ml-14">
@@ -54,24 +53,17 @@ function AboutMe({
             technologies and applying in making side projects. The following are
             tech stacks that I use regularly:
           </p>
-          {/* <Image
-            src={"/tech-stacks/tailwind.png"}
-            width={200}
-            height={100}
-            alt="htmlImage"
-          /> */}
-          {techStacks.map((stack, index) => {
-            return (
-              <div key={stack.title}>
-                <Image
-                  src={stack.image}
-                  width={200}
-                  height={100}
-                  alt={stack.title}
+          <div className="flex flex-wrap justify-center gap-x-5 items-center gap-y-4 mt-4 mb-5">
+            {techStacks.map((stack, index) => {
+              return (
+                <TechStacks
+                  key={nanoid()}
+                  stack={stack}
+                  textColor={textColor}
                 />
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

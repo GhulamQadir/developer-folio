@@ -9,7 +9,6 @@ interface TProps {
   developerName: string;
   theme: boolean;
   bgColor: string;
-  textColor: string;
   headingColor: string;
   iconColor: string;
   setTheme: (theme: boolean) => void;
@@ -19,7 +18,6 @@ function Navbar({
   theme,
   setTheme,
   bgColor,
-  textColor,
   headingColor,
   iconColor,
 }: TProps) {

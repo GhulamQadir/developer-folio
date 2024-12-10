@@ -4,7 +4,6 @@ import Link from "next/link";
 
 interface TProps {
   developerName: string;
-  bgColor: string;
   textColor: string;
   headingColor: string;
   borderColor: string;
@@ -14,7 +13,6 @@ interface TProps {
 }
 function HeroComponent({
   developerName,
-  bgColor,
   textColor,
   headingColor,
   headingTwoColor,
@@ -24,7 +22,7 @@ function HeroComponent({
 }: TProps) {
   return (
     <div
-      className={`${bgColor} w-full px-5 pt-20 md:pt-32 pb-10 flex flex-wrap justify-center border-b-[1px] ${borderColor}`}
+      className={`w-full px-5 pt-20 md:pt-32 pb-10 flex flex-wrap justify-center border-b-[1px] ${borderColor}`}
     >
       <div className="lg:w-[40%] md:mt-12">
         <p className={`text-3xl md:text-5xl ${headingTwoColor}`}>

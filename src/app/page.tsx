@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import AboutMe from "@/components/AboutMe";
 import HeroComponent from "@/components/HeroComponent";
 import Navbar from "@/components/Navbar";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   const [theme, setTheme] = useState(true);
@@ -35,25 +36,22 @@ export default function Home() {
       setContColor("bg-[#26313F]");
       setBtnTextColor("text-white");
     }
-    console.log(theme);
   }, [theme]);
   const developerName: string = "Ghulam Qadir";
   return (
     <html className="scroll-smooth">
       <body>
-        <div>
+        <div className={`${bgColor}`}>
           <Navbar
             developerName={developerName}
             theme={theme}
             setTheme={setTheme}
-            bgColor={bgColor}
-            textColor={textColor}
             headingColor={headingColor}
             iconColor={iconColor}
+            bgColor={bgColor}
           />
           <HeroComponent
             developerName={developerName}
-            bgColor={bgColor}
             textColor={textColor}
             headingColor={headingColor}
             headingTwoColor={headingTwoColor}
@@ -62,10 +60,15 @@ export default function Home() {
             btnTextColor={btnTextColor}
           />
           <AboutMe
-            bgColor={bgColor}
             textColor={textColor}
             headingColor={headingColor}
-            iconColor={iconColor}
+            borderColor={borderColor}
+            headingTwoColor={headingTwoColor}
+            containerColor={containerColor}
+          />
+          <Projects
+            textColor={textColor}
+            headingColor={headingColor}
             borderColor={borderColor}
             headingTwoColor={headingTwoColor}
             containerColor={containerColor}
