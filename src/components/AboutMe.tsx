@@ -35,7 +35,9 @@ function AboutMe({
       </div>
       <div className="lg:w-[50%] mb-7">
         <div>
-          <p className={`text-5xl ${headingTwoColor} font-medium`}>About Me</p>
+          <p className={`md:text-5xl text-3xl ${headingTwoColor} font-medium`}>
+            About Me
+          </p>
           <div className="flex ml-14">
             <div
               className={`w-[45px]  ${containerColor} h-[5px] content-center mt-[10px] mr-3`}
