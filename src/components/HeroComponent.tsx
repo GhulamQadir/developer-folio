@@ -25,7 +25,7 @@ function HeroComponent({
           Nice to meet you,
         </p>
         <p className={`text-4xl md:text-6xl mt-3 ${headingTwoColor}`}>
-          I'm{" "}
+          I&apos;m{" "}
           <span className={`${headingColor} font-bold`}>{developerName}</span>.
         </p>
         <p className={`text-2xl ${textColor} mt-6`}>{developerShortInfo}</p>

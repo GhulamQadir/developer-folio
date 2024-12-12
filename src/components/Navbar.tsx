@@ -1,6 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Button, Drawer } from "antd";
+import { useState } from "react";
+import { Drawer } from "antd";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";

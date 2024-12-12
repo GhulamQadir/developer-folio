@@ -1,5 +1,4 @@
 import { projects } from "@/data/data";
-import { theme } from "antd";
 import { nanoid } from "nanoid";
 import Image from "next/image";
 import Link from "next/link";
