@@ -19,7 +19,7 @@ function TechStacks({
         src={image}
         width={60}
         height={25}
-        className="h-12 w-14"
+        className="h-18 w-10"
         alt={title}
       />
       <div>

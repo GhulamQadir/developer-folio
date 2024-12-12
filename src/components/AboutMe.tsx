@@ -3,6 +3,7 @@ import ProfilePic from "@/assets/profile-pic.jpeg";
 import { techStacks } from "@/data/data";
 import TechStacks from "./TechStacks";
 import { nanoid } from "nanoid";
+import Link from "next/link";
 
 interface TProps {
   textColor: string;
@@ -46,7 +47,7 @@ function AboutMe({
           </div>
         </div>
         <div className="mt-4 mb-3">
-          <p className={`${textColor} leading-[30px] lg:text-xl text-lg`}>
+          <p className={`${textColor} leading-[30px] lg:text-lg text-md`}>
             I am currently doing my Bachelors from XYZ University, Karachi,
             Pakistan.I have a keen interest in Full Stack development. My goal
             is to use my expertise in building exciting and functional user
@@ -66,6 +67,14 @@ function AboutMe({
               );
             })}
           </div>
+
+          <Link href={"/resume.pdf"} download="Resume.pdf">
+            <button
+              className={`border-[1px] ${borderColor} px-3 py-1 ${headingTwoColor}`}
+            >
+              Download Resume
+            </button>
+          </Link>
         </div>
       </div>
     </div>

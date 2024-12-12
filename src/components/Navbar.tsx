@@ -54,13 +54,13 @@ function Navbar({
           >
             About
           </Link>
-          <Link href={""} className="w-20 rounded-md py-[5px] mr-7 text-xl">
+          <Link href={"#projects"} className="w-20 rounded-md py-[5px] mr-7 text-xl">
             Projects
           </Link>
           <Link href={""} className=" w-20 rounded-md py-[5px] mr-7 text-xl">
             Resume
           </Link>
-          <Link href={""} className="w-20 rounded-md py-[5px] mr-7 text-xl">
+          <Link href={"#contact"} className="w-20 rounded-md py-[5px] mr-7 text-xl">
             Contact
           </Link>
         </div>

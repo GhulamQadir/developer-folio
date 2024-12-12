@@ -4,6 +4,7 @@ import AboutMe from "@/components/AboutMe";
 import HeroComponent from "@/components/HeroComponent";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const [theme, setTheme] = useState(true);
@@ -72,7 +73,9 @@ export default function Home() {
             borderColor={borderColor}
             headingTwoColor={headingTwoColor}
             containerColor={containerColor}
+            btnTextColor={btnTextColor}
           />
+          <Contact headingTwoColor={headingTwoColor} />
         </div>
       </body>
     </html>

@@ -29,7 +29,7 @@ const projects: TProject[] = [
     image: "/projects/todo.jpg",
     aboutInfo:
       "This project introduces a robust task management application. It offers a user-friendly interface to create, organize, and track tasks efficiently.",
-    hostedLink: "",
+    hostedLink: "https://ghulamqadir.github.io/react-zustand-todoApp/",
     github: "https://github.com/GhulamQadir/react-zustand-todoApp",
     techStack: [
       "/tech-stacks/react.png",
@@ -42,8 +42,8 @@ const projects: TProject[] = [
     image: "/projects/news.jpg",
     aboutInfo:
       "This web app provides a comprehensive platform to access news from diverse sources. Users can browse through a variety of news categories, including top headlines sports and more.",
-    hostedLink: "",
-    github: "https://github.com/GhulamQadir/react-zustand-todoApp",
+    hostedLink: "https://ghulamqadir.github.io/news-app/",
+    github: "https://github.com/GhulamQadir/news-app",
     techStack: [
       "/tech-stacks/html.png",
       "/tech-stacks/js.webp",
@@ -53,9 +53,10 @@ const projects: TProject[] = [
   {
     title: "Quiz App",
     image: "/projects/quiz.jpg",
-    aboutInfo: "",
-    hostedLink: "",
-    github: "https://github.com/GhulamQadir/react-zustand-todoApp",
+    aboutInfo:
+      "This quiz app offers an engaging way to test your knowledge. Users can answer multiple-choice questions on various topics and track their progress.",
+    hostedLink: "https://ghulamqadir.github.io/quiz-app/",
+    github: "https://github.com/GhulamQadir/quiz-app",
     techStack: [
       "/tech-stacks/html.png",
       "/tech-stacks/js.webp",
@@ -65,9 +66,10 @@ const projects: TProject[] = [
   {
     title: "Weather App",
     image: "/projects/weather.jpg",
-    aboutInfo: "",
-    hostedLink: "",
-    github: "https://github.com/GhulamQadir/react-zustand-todoApp",
+    aboutInfo:
+      "This weather app provides real-time weather information for any location. The app leverages a weather API to fetch the latest data and presents it in a clear and visually appealing format.",
+    hostedLink: "https://ghulamqadir.github.io/weather-app/",
+    github: "https://github.com/GhulamQadir/weather-app",
     techStack: [
       "/tech-stacks/html.png",
       "/tech-stacks/js.webp",
