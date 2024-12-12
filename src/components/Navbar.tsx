@@ -4,23 +4,15 @@ import { Button, Drawer } from "antd";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
-
+import { developerName } from "@/data/data";
 interface TProps {
-  developerName: string;
   theme: boolean;
   bgColor: string;
   headingColor: string;
   iconColor: string;
   setTheme: (theme: boolean) => void;
 }
-function Navbar({
-  developerName,
-  theme,
-  setTheme,
-  bgColor,
-  headingColor,
-  iconColor,
-}: TProps) {
+function Navbar({ theme, setTheme, bgColor, headingColor, iconColor }: TProps) {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {
@@ -37,7 +29,7 @@ function Navbar({
 
   return (
     <div
-      className={`${bgColor} flex justify-between px-1 md:px-2 py-4 sticky top-0 !scroll-smooth`}
+      className={`${bgColor} flex justify-between px-1 md:px-2 py-4 sticky z-10 top-0 !scroll-smooth`}
     >
       <div className="lg:w-[20%] text-center content-center">
         <p
@@ -54,13 +46,19 @@ function Navbar({
           >
             About
           </Link>
-          <Link href={"#projects"} className="w-20 rounded-md py-[5px] mr-7 text-xl">
+          <Link
+            href={"#projects"}
+            className="w-20 rounded-md py-[5px] mr-7 text-xl"
+          >
             Projects
           </Link>
           <Link href={""} className=" w-20 rounded-md py-[5px] mr-7 text-xl">
             Resume
           </Link>
-          <Link href={"#contact"} className="w-20 rounded-md py-[5px] mr-7 text-xl">
+          <Link
+            href={"#contact"}
+            className="w-20 rounded-md py-[5px] mr-7 text-xl"
+          >
             Contact
           </Link>
         </div>
@@ -68,21 +66,19 @@ function Navbar({
           <button className="" onClick={changeTheme}>
             <MdOutlineDarkMode color={iconColor} size={30} />
           </button>
-          <button className="lg:hidden">
+          <button className="lg:hidden" onClick={showDrawer}>
             <GiHamburgerMenu color={iconColor} size={24} />
           </button>
         </div>
       </div>
-      {/* <p>Navbar</p>
-      <Button type="primary" onClick={showDrawer}>
-        Open
-      </Button>
+
       <Drawer
         title="Basic Drawer"
         placement={"left"}
         closable={false}
         onClose={onClose}
         open={open}
+        width={300}
         key={"left"}
       >
         <button onClick={onClose} className="bg-red-500 p-3 text-white">
@@ -91,7 +87,7 @@ function Navbar({
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>
-      </Drawer> */}
+      </Drawer>
     </div>
   );
 }

@@ -3,6 +3,11 @@ interface TechStack {
   title: string;
 }
 
+const developerName: string = "Ghulam Qadir";
+const developerAboutInfo: string =
+  "I am currently doing my Bachelors from XYZ University, Karachi, Pakistan.I have a keen interest in Full Stack development.My goal is to use my expertise in building exciting and functional user  interfaces.Alongside this, I am creating side projects for enhancing my skills in the field of development, learning latest technologies and applying in making side projects.The following are tech stacks that I use regularly: ";
+const developerShortInfo:string = "A passionate MERN Stack Developer creating web applications using the latest frontend technologies and frameworks to bring your vision to life."
+
 const techStacks: TechStack[] = [
   { image: "/tech-stacks/js.webp", title: "JavaScript" },
   { image: "/tech-stacks/ts.png", title: "TypeScript" },
@@ -78,4 +83,4 @@ const projects: TProject[] = [
   },
 ];
 
-export { techStacks, projects };
+export { techStacks, projects, developerName, developerAboutInfo,developerShortInfo };

@@ -4,7 +4,7 @@ import { techStacks } from "@/data/data";
 import TechStacks from "./TechStacks";
 import { nanoid } from "nanoid";
 import Link from "next/link";
-
+import { developerAboutInfo } from "@/data/data";
 interface TProps {
   textColor: string;
   headingColor: string;
@@ -22,7 +22,7 @@ function AboutMe({
   return (
     <div
       id="aboutDiv"
-      className={`px-5 py-10 md:py-14 md:px-20 flex flex-wrap-reverse justify-center gap-x-28 scroll-smooth border-b-[1px] ${borderColor}`}
+      className={`px-5 py-10 md:py-14 md:px-20 flex flex-wrap-reverse justify-center gap-x-28 scroll-smooth`}
     >
       <div className="relative">
         <div
@@ -48,16 +48,10 @@ function AboutMe({
         </div>
         <div className="mt-4 mb-3">
           <p className={`${textColor} leading-[30px] lg:text-lg text-md`}>
-            I am currently doing my Bachelors from XYZ University, Karachi,
-            Pakistan.I have a keen interest in Full Stack development. My goal
-            is to use my expertise in building exciting and functional user
-            interfaces. Alongside this, I am creating side projects for
-            enhancing my skills in the field of development, learning latest
-            technologies and applying in making side projects. The following are
-            tech stacks that I use regularly:
+            {developerAboutInfo}
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 items-center gap-y-4 mt-4 mb-5">
-            {techStacks.map((stack, index) => {
+            {techStacks.map((stack) => {
               return (
                 <TechStacks
                   key={nanoid()}

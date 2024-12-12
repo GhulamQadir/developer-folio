@@ -4,7 +4,7 @@ import { IoLogoGithub, IoMail } from "react-icons/io5";
 
 function Contact({ headingTwoColor }: { headingTwoColor: string }) {
   return (
-    <div id="#contact" className="text-center py-8">
+    <div id="contact" className="text-center py-8">
       <p className={`text-4xl font-bold ${headingTwoColor}`}>Get in Touch</p>
       <ul className="flex mt-5 justify-center px-1 gap-x-4 text-white items-center">
         <li className="bg-[#0077B5] px-2 py-2 rounded-full">

@@ -1,40 +1,43 @@
 import { projects } from "@/data/data";
+import { theme } from "antd";
 import { nanoid } from "nanoid";
 import Image from "next/image";
 import Link from "next/link";
 
 interface TProps {
   textColor: string;
-  headingColor: string;
   borderColor: string;
   headingTwoColor: string;
   containerColor: string;
   btnTextColor: string;
+  theme: boolean;
 }
 function Projects({
   textColor,
-  headingColor,
   borderColor,
   headingTwoColor,
   containerColor,
   btnTextColor,
+  theme,
 }: TProps) {
   return (
     <div
       id="projects"
-      className={`lg:px-28 px-2 py-12 text-center font border-b-[1px] ${borderColor}`}
+      className={`lg:px-28 px-2 py-12 text-center font-roboto`}
     >
       <p className={`md:text-5xl text-3xl ${headingTwoColor} font-medium`}>
         Projects
       </p>
-      <div className="flex flex-wrap justify-center gap-x-7 gap-y-4 mt-10">
+      <div className="flex flex-wrap justify-center gap-x-7 gap-y-6 mt-10">
         {projects.map((proj) => {
           const { title, image, aboutInfo, hostedLink, github, techStack } =
             proj;
           return (
             <div
               key={nanoid()}
-              className={`h-[440px] lg:h-[415px] border-[1px] shadow-lg rounded-lg w-96`}
+              className={`h-[460px] lg:h-[425px] shadow-lg rounded-lg w-96 border-[1px] ${
+                theme && "border-gray-700"
+              }`}
             >
               <Image
                 src={image}

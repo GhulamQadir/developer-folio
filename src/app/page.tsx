@@ -5,6 +5,7 @@ import HeroComponent from "@/components/HeroComponent";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [theme, setTheme] = useState(true);
@@ -38,13 +39,11 @@ export default function Home() {
       setBtnTextColor("text-white");
     }
   }, [theme]);
-  const developerName: string = "Ghulam Qadir";
   return (
     <html className="scroll-smooth">
       <body>
         <div className={`${bgColor}`}>
           <Navbar
-            developerName={developerName}
             theme={theme}
             setTheme={setTheme}
             headingColor={headingColor}
@@ -52,11 +51,9 @@ export default function Home() {
             bgColor={bgColor}
           />
           <HeroComponent
-            developerName={developerName}
             textColor={textColor}
             headingColor={headingColor}
             headingTwoColor={headingTwoColor}
-            borderColor={borderColor}
             containerColor={containerColor}
             btnTextColor={btnTextColor}
           />
@@ -69,13 +66,14 @@ export default function Home() {
           />
           <Projects
             textColor={textColor}
-            headingColor={headingColor}
             borderColor={borderColor}
             headingTwoColor={headingTwoColor}
             containerColor={containerColor}
             btnTextColor={btnTextColor}
+            theme={theme}
           />
           <Contact headingTwoColor={headingTwoColor} />
+          <Footer textColor={textColor} />
         </div>
       </body>
     </html>
