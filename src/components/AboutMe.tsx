@@ -62,13 +62,15 @@ function AboutMe({
             })}
           </div>
 
-          <Link href={"/resume.pdf"} download="Resume.pdf">
-            <button
-              className={`border-[1px] ${borderColor} px-3 py-1 ${headingTwoColor}`}
-            >
-              Download Resume
-            </button>
-          </Link>
+          <div>
+            <Link href={"/resume.pdf"} download="Resume.pdf" id="resume">
+              <button
+                className={`border-[1px] ${borderColor} px-3 py-1 ${headingTwoColor}`}
+              >
+                Download Resume
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
