@@ -6,7 +6,8 @@ interface TechStack {
 const developerName: string = "Ghulam Qadir";
 const developerAboutInfo: string =
   "I am currently doing my Bachelors from XYZ University, Karachi, Pakistan.I have a keen interest in Full Stack development.My goal is to use my expertise in building exciting and functional user  interfaces.Alongside this, I am creating side projects for enhancing my skills in the field of development, learning latest technologies and applying in making side projects.The following are tech stacks that I use regularly: ";
-const developerShortInfo:string = "A passionate MERN Stack Developer creating web applications using the latest frontend technologies and frameworks to bring your vision to life."
+const developerShortInfo: string =
+  "A passionate MERN Stack Developer creating web applications using the latest frontend technologies and frameworks to bring your vision to life.";
 
 const techStacks: TechStack[] = [
   { image: "/tech-stacks/js.webp", title: "JavaScript" },
@@ -29,6 +30,19 @@ interface TProject {
 }
 
 const projects: TProject[] = [
+  {
+    title: "Developer Portfolio",
+    image: "/projects/dev-folio.PNG",
+    aboutInfo:
+      "I've built a developer portfolio website showcasing my skills and projects. A well-crafted portfolio effectively demonstrates my skills and experience to potential employers and clients.",
+    hostedLink: "https://developerfolio-gq.vercel.app/",
+    github: "https://github.com/GhulamQadir/developer-folio",
+    techStack: [
+      "/tech-stacks/nextjs.webp",
+      "/tech-stacks/ts.png",
+      "/tech-stacks/tailwind.png",
+    ],
+  },
   {
     title: "Task Manager",
     image: "/projects/todo.jpg",
@@ -83,4 +97,10 @@ const projects: TProject[] = [
   },
 ];
 
-export { techStacks, projects, developerName, developerAboutInfo,developerShortInfo };
+export {
+  techStacks,
+  projects,
+  developerName,
+  developerAboutInfo,
+  developerShortInfo,
+};

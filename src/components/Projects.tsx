@@ -34,7 +34,7 @@ function Projects({
           return (
             <div
               key={nanoid()}
-              className={`h-[460px] lg:h-[425px] shadow-lg rounded-lg w-96 border-[1px] ${
+              className={`h-[490px] lg:h-[450px] shadow-lg rounded-lg w-96 border-[1px] ${
                 theme && "border-gray-700"
               }`}
             >
@@ -49,7 +49,7 @@ function Projects({
                 <p className={`${headingTwoColor} text-2xl font-roboto`}>
                   {title}
                 </p>
-                <div className="mt-1 lg:h-24 h-[120px]">
+                <div className="mt-2 lg:h-[110px] h-[135px]">
                   <p className={`${textColor}`}>{aboutInfo}</p>
                 </div>
                 <div className="flex gap-x-3 items-center px-1 mt-2">
@@ -70,7 +70,7 @@ function Projects({
                     })}
                   </div>
                 </div>
-                <div className="flex mt-3 justify-center gap-x-2">
+                <div className="flex mt-5 justify-center gap-x-2">
                   <button className={`${containerColor} px-3 py-1`}>
                     <Link
                       target="blank"

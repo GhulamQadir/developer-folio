@@ -44,10 +44,11 @@ export default function Home() {
       setBtnTextColor("text-white");
     }
   }, [theme]);
-  window.onscroll = function () {
-    scrollFunction();
-  };
-
+  if (typeof window !== "undefined") {
+    window.onscroll = function () {
+      scrollFunction();
+    };
+  }
   const btnRef = useRef<HTMLButtonElement>(null);
   const scrollFunction = () => {
     if (
