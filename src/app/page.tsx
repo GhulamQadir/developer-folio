@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { useRef } from "react";
+import { IoIosArrowUp } from "react-icons/io";
 
 export default function Home() {
   const [theme, setTheme] = useState(true);
@@ -42,45 +44,71 @@ export default function Home() {
       setBtnTextColor("text-white");
     }
   }, [theme]);
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const scrollFunction = () => {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      if (btnRef.current) {
+        btnRef.current.style.display = "block";
+      }
+    } else {
+      if (btnRef.current) {
+        btnRef.current.style.display = "none";
+      }
+    }
+  };
+
+  const backToTop = () => {
+    document.documentElement.scrollTop = 0;
+  };
   return (
-    <html className="scroll-smooth">
-      <body>
-        <div className={`${bgColor}`}>
-          <Navbar
-            theme={theme}
-            setTheme={setTheme}
-            headingColor={headingColor}
-            iconColor={iconColor}
-            bgColor={bgColor}
-            drawerBgColor={drawerBgColor}
-            textColor={textColor}
-          />
-          <HeroComponent
-            textColor={textColor}
-            headingColor={headingColor}
-            headingTwoColor={headingTwoColor}
-            containerColor={containerColor}
-            btnTextColor={btnTextColor}
-          />
-          <AboutMe
-            textColor={textColor}
-            headingColor={headingColor}
-            borderColor={borderColor}
-            headingTwoColor={headingTwoColor}
-            containerColor={containerColor}
-          />
-          <Projects
-            textColor={textColor}
-            borderColor={borderColor}
-            headingTwoColor={headingTwoColor}
-            containerColor={containerColor}
-            btnTextColor={btnTextColor}
-            theme={theme}
-          />
-          <Contact headingTwoColor={headingTwoColor} />
-          <Footer textColor={textColor} />
-        </div>
-      </body>
-    </html>
+    <div className={`${bgColor}`}>
+      <Navbar
+        theme={theme}
+        setTheme={setTheme}
+        headingColor={headingColor}
+        iconColor={iconColor}
+        bgColor={bgColor}
+        drawerBgColor={drawerBgColor}
+        textColor={textColor}
+      />
+      <HeroComponent
+        textColor={textColor}
+        headingColor={headingColor}
+        headingTwoColor={headingTwoColor}
+        containerColor={containerColor}
+        btnTextColor={btnTextColor}
+      />
+      <AboutMe
+        textColor={textColor}
+        headingColor={headingColor}
+        borderColor={borderColor}
+        headingTwoColor={headingTwoColor}
+        containerColor={containerColor}
+      />
+      <Projects
+        textColor={textColor}
+        borderColor={borderColor}
+        headingTwoColor={headingTwoColor}
+        containerColor={containerColor}
+        btnTextColor={btnTextColor}
+        theme={theme}
+      />
+      <Contact headingTwoColor={headingTwoColor} />
+      <Footer textColor={textColor} />
+      <button
+        onClick={backToTop}
+        ref={btnRef}
+        className="fixed bottom-5 right-4 text-white bg-slate-600 px-2 py-2 rounded-md hidden"
+      >
+        <IoIosArrowUp />
+      </button>
+    </div>
   );
 }
