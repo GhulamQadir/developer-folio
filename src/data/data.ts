@@ -9,6 +9,8 @@ const developerAboutInfo: string =
 const developerShortInfo: string =
   "A passionate MERN Stack Developer creating web applications using the latest frontend technologies and frameworks to bring your vision to life.";
 
+const developerProfileImg: string = "/profile-pic/profile-pic.jpeg";
+
 const techStacks: TechStack[] = [
   { image: "/tech-stacks/js.webp", title: "JavaScript" },
   { image: "/tech-stacks/ts.png", title: "TypeScript" },
@@ -103,4 +105,5 @@ export {
   developerName,
   developerAboutInfo,
   developerShortInfo,
+  developerProfileImg,
 };

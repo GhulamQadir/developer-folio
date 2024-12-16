@@ -22,7 +22,7 @@ function Projects({
   return (
     <div
       id="projects"
-      className={`lg:px-28 px-2 py-12 text-center font-roboto`}
+      className={`lg:px-28 px-2 pt-20 pb-16 text-center font-roboto`}
     >
       <p className={`md:text-5xl text-3xl ${headingTwoColor} font-medium`}>
         Projects

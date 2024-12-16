@@ -1,5 +1,4 @@
 import Image from "next/image";
-import DevGuy from "@/assets/devguy.gif";
 import Link from "next/link";
 import { developerName, developerShortInfo } from "@/data/data";
 interface TProps {
@@ -17,9 +16,7 @@ function HeroComponent({
   btnTextColor,
 }: TProps) {
   return (
-    <div
-      className={`w-full px-5 pt-20 md:pt-32 pb-10 flex flex-wrap justify-center`}
-    >
+    <div className={`w-full px-5 pt-20 md:pt-32 flex flex-wrap justify-center`}>
       <div className="lg:w-[40%] md:mt-12">
         <p className={`text-3xl md:text-5xl ${headingTwoColor}`}>
           Nice to meet you,
@@ -38,11 +35,11 @@ function HeroComponent({
           <button className={`${textColor} flex items-center gap-x-2`}>
             <div className="w-3 h-3 bg-[#55E5A4] rounded-full pr-2"></div>
             <Link href={"#contact"}>Available now</Link>
-          </button>{" "}
+          </button>
         </div>
       </div>
       <div className="lg:w-[40%]">
-        <Image src={DevGuy} alt="dev-guy" />
+        <Image src={"/devguy.gif"} alt="dev-guy" height={600} width={600} />
       </div>
     </div>
   );

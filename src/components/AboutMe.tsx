@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProfilePic from "@/assets/profile-pic.jpeg";
+import { developerProfileImg } from "@/data/data";
 import { techStacks } from "@/data/data";
 import TechStacks from "./TechStacks";
 import { nanoid } from "nanoid";
@@ -22,15 +22,17 @@ function AboutMe({
   return (
     <div
       id="aboutDiv"
-      className={`px-5 py-10 md:py-14 md:px-20 flex flex-wrap-reverse justify-center gap-x-28 scroll-smooth`}
+      className={`px-5 py-10 md:pt-24 md:px-20 flex flex-wrap-reverse justify-center gap-x-28 scroll-smooth`}
     >
       <div className="relative">
         <div
           className={`absolute top-0 left-0 w-[50%] h-[80%] border-t-[10px] border-l-[10px] ${borderColor}`}
         ></div>
         <Image
-          src={ProfilePic}
+          src={developerProfileImg}
           alt="profile-pic"
+          width={300}
+          height={300}
           className="h-[300px] w-[300px] md:h-[350px] md:w-[350px] mt-[10px] ml-[10px]"
         />
       </div>
@@ -50,26 +52,30 @@ function AboutMe({
           <p className={`${textColor} leading-[30px] lg:text-lg text-md`}>
             {developerAboutInfo}
           </p>
-          <div className="flex flex-wrap justify-center gap-x-5 items-center gap-y-4 mt-4 mb-5">
-            {techStacks.map((stack) => {
-              return (
-                <TechStacks
-                  key={nanoid()}
-                  stack={stack}
-                  textColor={textColor}
-                />
-              );
-            })}
-          </div>
-
           <div>
-            <Link href={"/resume.pdf"} download="Resume.pdf" id="resume">
-              <button
-                className={`border-[1px] ${borderColor} px-3 py-1 ${headingTwoColor}`}
-              >
-                Download Resume
-              </button>
-            </Link>
+            <div
+              className="flex flex-wrap justify-center gap-x-5 items-center gap-y-4 mt-4 mb-5"
+              id="resume"
+            >
+              {techStacks.map((stack) => {
+                return (
+                  <TechStacks
+                    key={nanoid()}
+                    stack={stack}
+                    textColor={textColor}
+                  />
+                );
+              })}
+            </div>
+            <div>
+              <Link href={"/resume.pdf"} download="Resume.pdf">
+                <button
+                  className={`border-[1px] ${borderColor} px-3 py-1 ${headingTwoColor}`}
+                >
+                  Download Resume
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

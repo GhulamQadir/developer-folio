@@ -41,7 +41,7 @@ function Navbar({
 
   return (
     <div
-      className={`${bgColor} flex justify-between px-1 md:px-2 py-4 sticky z-10 top-0 !scroll-smooth`}
+      className={`${bgColor} flex justify-between px-1 md:px-2 py-4 sticky z-10 top-0`}
     >
       <div className="lg:w-[20%] text-center content-center">
         <p
