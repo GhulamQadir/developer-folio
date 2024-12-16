@@ -3,15 +3,20 @@ interface TechStack {
   title: string;
 }
 
+// developer name
 const developerName: string = "Ghulam Qadir";
+
+// developer about info
 const developerAboutInfo: string =
   "I am currently doing my Bachelors from XYZ University, Karachi, Pakistan.I have a keen interest in Full Stack development.My goal is to use my expertise in building exciting and functional user  interfaces.Alongside this, I am creating side projects for enhancing my skills in the field of development, learning latest technologies and applying in making side projects.The following are tech stacks that I use regularly: ";
 const developerShortInfo: string =
   "A passionate MERN Stack Developer creating web applications using the latest frontend technologies and frameworks to bring your vision to life.";
 
+// save your profile pic in public/profile-pic folder
 const developerProfileImg: string = "/profile-pic/profile-pic.jpeg";
 
 const techStacks: TechStack[] = [
+  // change it with your tech stacks, save all imaes in public/tech-stacks directory
   { image: "/tech-stacks/js.webp", title: "JavaScript" },
   { image: "/tech-stacks/ts.png", title: "TypeScript" },
   { image: "/tech-stacks/react.png", title: "React JS" },
@@ -32,6 +37,7 @@ interface TProject {
 }
 
 const projects: TProject[] = [
+  // change it with your porjets, project images, info & tech stack
   {
     title: "Developer Portfolio",
     image: "/projects/dev-folio.PNG",
